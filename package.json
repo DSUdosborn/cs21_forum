@@ -1,0 +1,24 @@
+{
+  "name": "cs21_forum",
+  "version": "1.0.0",
+  "description": "Package JSON for Codeschool 2021 forum project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSUdosborn/cs21_forum.git"
+  },
+  "author": "dz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DSUdosborn/cs21_forum/issues"
+  },
+  "homepage": "https://github.com/DSUdosborn/cs21_forum#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0"
+  }
+}
