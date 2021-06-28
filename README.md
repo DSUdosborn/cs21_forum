@@ -2,6 +2,29 @@
 
 # cs-forum-2021
 
+-nvm install 14.16.0  
+-sudo snap install postman
+-sudo apt-get install git-cola
+
+
+-sudo apt upgrade nodejs
+-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+
+
+-git clone https://github.com/DSUdosborn/cs21_forum.git
+
+
+-cd cs_21forum
+
+
+-npm init
+
+-npm install -g nodemon
+
+-npm install --save  mongoose
+-npm install express –save
+-npm install --save cors
+
 - npm init
 - node install --save
   - express
