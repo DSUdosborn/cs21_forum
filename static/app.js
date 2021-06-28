@@ -2,8 +2,6 @@ var app = new Vue({
   el: '#app',
   vuetify: new Vuetify(),
 
-  new Vue({
-    el: '#app',
 
     data () {
       return {
@@ -21,6 +19,6 @@ var app = new Vue({
       }
     }
 
-  })
+
 
 })
