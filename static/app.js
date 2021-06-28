@@ -2,36 +2,25 @@ var app = new Vue({
   el: '#app',
   vuetify: new Vuetify(),
 
-  data () {
-   return {
-     dialog: false,
-     nav: [
-       {
-         icon: 'home',
-         text: 'Home',
-         title: 'Back to Home page',
-         active: true
-       },
-       {
-         icon: 'info',
-         text: 'About',
-         title: 'About this demo',
-         active: false
-       },
-       {
-         icon: 'assignment_turned_in',
-         text: 'Todos',
-         title: 'Some stuff that needs doing',
-         active: false
-       },
-       {
-         icon: 'email',
-         text: 'Contact',
-         title: 'Our Contact info',
-         active: false
-       }
-     ]
-   }
- }
+  new Vue({
+    el: '#app',
+
+    data () {
+      return {
+        menu: [
+          { icon: 'home', title: 'Link A' },
+          { icon: 'info', title: 'Link B' },
+          { icon: 'warning', title: 'Link C' }
+        ]
+      }
+    },
+
+    methods: {
+      menuItems () {
+        return this.menu
+      }
+    }
+
+  })
 
 })
