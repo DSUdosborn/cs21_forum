@@ -4,10 +4,6 @@ var app = new Vue({
 
   data:{
     page: "home"
-  },
-
-  methods:{
-
-
   }
+
 })
