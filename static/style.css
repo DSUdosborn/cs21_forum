@@ -18,3 +18,8 @@ h2{
   font-weight: 400;
   margin-bottom:0;
 }
+
+button{
+	font-family: Roboto;
+  font-weight: 300;
+}
