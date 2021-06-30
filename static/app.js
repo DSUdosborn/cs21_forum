@@ -77,6 +77,11 @@ var app= new Vue({
         //delete Thread function here
         deleteThread: function(index){
             this.threads.splice(index,1)
+        }.
+
+        getPosts: function(index){
+
+
         }
 
     },
