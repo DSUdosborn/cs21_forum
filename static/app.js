@@ -33,8 +33,12 @@ var app= new Vue({
                 category:"all",
                 posts:[
                     {
-                        author:"post author",
-                        body:" description of post here"
+                        author:"dz sez",
+                        body:" This is the response posted by doug"
+                    },
+                    {
+                        author:"issac sez",
+                        body:" Issac has a lot to say about this thread so his comment is particularly  verbose"
                     }
                 ]
             },
