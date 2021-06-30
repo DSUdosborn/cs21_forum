@@ -80,7 +80,7 @@ var app= new Vue({
         }.
 
 
-    },
+    
     computed:{
         //sorted threads here
 
