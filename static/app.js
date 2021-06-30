@@ -81,7 +81,10 @@ var app= new Vue({
 
         //delete Thread function here
         getPosts: function(index){
+            this.postings=this.threads[index].posts;
             this.page="posts";
+            this.index=index;
+
         },
 
     },
