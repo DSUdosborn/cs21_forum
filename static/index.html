@@ -35,11 +35,12 @@
             </div>
             <ul>
                 <li v-for="(thread,index) in sorted_threads">
+                  <div v-on:click="getPosts(index)">
                     <h2> {{ thread.name }} </h2>
                     <p> {{ thread.author }}</p>
                     <p> {{ thread.description }}</p>
                     <p> {{ thread.category }}</p>
-
+                  </div>
                     <!-- Delete button here -->
                     <button v-on:click="deleteThread(index)">Delete</button>
                 </li>
@@ -72,8 +73,16 @@
 
           <h2> Posts </h2>
           <button v-on:click="page = 'thread'">Back</button>
+          <h2>{{threads[index].name}}
+            <p>{{threads[index].author}}</p>
+            <p>{{threads[index].description}}</p>
+            <p>{{threads[index].category}}</p>
+          <h2>POSTS</h2>
           <ul>
-            <li></li>
+            <li v-for="post in posts">
+              {{post.author}}
+              {{post.body}}
+            </li>
           </ul>
 
         </div>

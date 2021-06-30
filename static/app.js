@@ -84,7 +84,6 @@ var app= new Vue({
             this.postings=this.threads[index].posts;
             this.page="posts";
             this.index=index;
-
         },
 
     },
