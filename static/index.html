@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-</head>
-<body>
-  <div id="app">
-  <v-app id="inspire">
-    <v-toolbar>
-      <v-toolbar-title>Toolbar Mobile Menu</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-         <v-btn
-          v-for="item in menu"
-          :key="item.icon"
-          :to="item.link"
-          flat
-        >{{ item.title }}</v-btn>
-      </v-toolbar-items>
-      <v-menu class="hidden-md-and-up">
-        <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
-        <v-list>
-          <v-list-tile v-for="item in menu" :key="item.icon">
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-             </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-menu>
-    </v-toolbar>
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <v-flex shrink>
-            <h1 class="display-1">Vuetify Mobile Navbar using v-menu</h1>
-            <p>Quick example of collapsable mobile menu <tt>&lt;v-toolbar&gt;</tt>, with a <tt>&lt;v-menu&gt;</tt> for mobile screens.</p>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <div id="app">
 
-            <p>Also shows how to use <tt>.hidden-md-and-up</tt> CSS classes to appropriately hide/show the menu depending upon window width.</p>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
-  </v-app>
-</div>
+        <h1>Forum App</h1>
+        <button v-on:click="page = 'forum'">Forum</button>
+        <button v-on:click="page = 'thread'">New thread</button><br>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script src="app.js"></script>
+        <!-- IF THE PAGE IS FORUM -->
+        <div v-if="page == 'forum'">
 
-</body>
+            <!-- Category dropdown select -->
+            <h3>Select a category</h3>
+            <select v-model="selected_category">
+                <option v-for="category in categories">
+                    {{ category }}
+                </option>
+            </select>
+            {{ selected_category }}
+
+            <!-- Displaying threads -->
+            <div v-show="sorted_threads.length==0">
+                {{ threads_empty }}
+            </div>
+            <ul>
+                <li v-for="(thread,index) in sorted_threads">
+                    <h2> {{ thread.name }} </h2>
+                    <p> {{ thread.author }}</p>
+                    <p> {{ thread.description }}</p>
+                    <p> {{ thread.category }}</p>
+
+                    <!-- Delete button here -->
+                    <button v-on:click="deleteThread(index)">Delete</button>
+                </li>
+            </ul>
+        </div>
+        <!-- END OF FORUM PAGE -->
+
+
+        <!-- IF THE PAGE IS THREAD -->
+        <div v-else-if="page == 'thread'">
+        <!-- Create new thread-->
+        <h2>Create Thread</h2>
+        <label>Enter Title:</label>
+        <input v-model="new_name" type="text"><br>
+        <label>Author</label>
+        <input v-model="new_author" type="text"><br>
+        <label>Description</label>
+        <input v-model="new_description" type="text"><br>
+        <label>Category:</label>
+        <select v-model="new_category">
+            <option v-for="category in categories" v-bind:value="category">
+                {{ category }}
+            </option>
+        </select>
+        <button v-on:click="createThread()">Submit</button>
+        </div>
+        <!-- END OF PAGE THREAD -->
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
 </html>
