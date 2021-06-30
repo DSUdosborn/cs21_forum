@@ -79,10 +79,6 @@ var app= new Vue({
             this.threads.splice(index,1)
         }.
 
-        getPosts: function(index){
-
-
-        }
 
     },
     computed:{
