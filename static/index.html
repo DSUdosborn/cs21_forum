@@ -68,12 +68,14 @@
         </div>
         <!-- END OF PAGE THREAD -->
 
-        <div v-else-if="page == 'thread'">
+        <div v-else-if="page == 'posts'">
 
           <h2> Posts </h2>
+          <button v-on:click="page = 'thread'">Back</button>
           <ul>
             <li></li>
           </ul>
+
         </div>
 
 
